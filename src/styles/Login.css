@@ -1,0 +1,38 @@
+body {
+  background: lightgray;
+  font-family: open sans , sans-serif;
+}
+
+label {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-weight: 1000;
+  height: 30px;
+  margin: 20px 30px;
+}
+
+input {
+  background-color: #a1c6cf;
+  border-radius: 10px;
+  color: black;
+  width: 250px;
+}
+
+form {
+  align-items: center;
+  background-color: rgb(101, 119, 164);
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  background: #0066a2;
+  border-color: #01080c;
+  border-radius: 20px;
+  border-style: outset;
+  color: white;
+  font: 15px arial , sans-serif;
+  height: 30px;
+  width: 80px;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Loading from '../components/Loading';
 import { createUser } from '../services/userAPI';
+import '../styles/Login.css';
 
 class Login extends Component {
   state = {
@@ -29,7 +30,7 @@ class Login extends Component {
     const { name, loading } = this.state;
     const minlength = 3;
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="page-login">
         {loading && (
           <Loading />
         )}
