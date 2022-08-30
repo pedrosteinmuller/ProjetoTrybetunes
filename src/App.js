@@ -8,6 +8,7 @@ import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
+import Header from './components/Header';
 
 class App extends React.Component {
   render() {
@@ -21,8 +22,8 @@ class App extends React.Component {
           <Route path="/profile" component={ Profile } />
           <Route path="*" component={ NotFound } />
         </Switch>
+        <Header />
         <Route path="/profile/edit" component={ ProfileEdit } />
-
       </BrowserRouter>
     );
   }
