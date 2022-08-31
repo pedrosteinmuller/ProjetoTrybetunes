@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 class MusicCard extends Component {
   state = {
-    // favoriteMusicsData: [],
+    favoriteMusicsData: [],
     loading: false,
   };
 
   componentDidMount() {
     this.requestFavoriteApi();
+    this.recoverFavoriteSongs();
   }
 
   requestFavoriteApi = (object) => {
@@ -20,10 +21,21 @@ class MusicCard extends Component {
     });
   };
 
+  recoverFavoriteSongs = () => {
+    this.setState({ loading: true }, async () => {
+      const ApiResponse = await getFavoriteSongs();
+      // console.log(await ApiResponse);
+      this.setState({
+        loading: false,
+        favoriteMusicsData: [...ApiResponse],
+      });
+    });
+  };
+
   render() {
     const { trackName, previewUrl, trackId, musica } = this.props;
     // console.log(musica);
-    const { loading } = this.state;
+    const { loading, favoriteMusicsData } = this.state;
     return (
       <div>
         <span>{trackName}</span>
@@ -42,7 +54,10 @@ class MusicCard extends Component {
               id={ `checkbox-music-${trackId}` }
               data-testid={ `checkbox-music-${trackId}` }
               type="checkbox"
-              onClick={ () => this.requestFavoriteApi(musica) }
+              checked={
+                favoriteMusicsData.some((item) => item.trackId === trackId)
+              }
+              onChange={ () => this.requestFavoriteApi(musica) }
             />
           </label>
         </div>
@@ -51,6 +66,10 @@ class MusicCard extends Component {
     );
   }
 }
+
+// no ultimo teste do requisito 9, João Matheus da tribo B me auxiliou da seguinte forma:
+// trocar onClick do meu input do tipo checkbox para onChange e alteração de um detalhe
+// da minha função recoverFavoriteSongs com uso do spread.
 
 MusicCard.propTypes = {
   trackName: PropTypes.string.isRequired,
