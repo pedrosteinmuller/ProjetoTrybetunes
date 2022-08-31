@@ -8,7 +8,7 @@ class Search extends Component {
   state = {
     searchArtistName: '',
     loading: false,
-    artistResult: '',
+    artistResult: [],
     nameArtist: '',
   };
 
