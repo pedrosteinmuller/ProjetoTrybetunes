@@ -16,7 +16,7 @@ class Album extends Component {
   requestApi = async () => {
     const { match: { params: { id } } } = this.props;
     const music = await getMusics(id);
-    console.log(music);
+    // console.log(music);
     this.setState({ musicsList: music });
   };
 
@@ -41,6 +41,8 @@ class Album extends Component {
               key={ eachMusic.trackName }
               trackName={ eachMusic.trackName }
               previewUrl={ eachMusic.previewUrl }
+              trackId={ eachMusic.trackId }
+              musica={ eachMusic }
             />
           ))
         )}
