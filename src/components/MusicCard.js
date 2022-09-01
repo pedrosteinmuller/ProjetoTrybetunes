@@ -7,6 +7,7 @@ class MusicCard extends Component {
   state = {
     favoriteMusicsData: [],
     loading: false,
+    // favorites: [],
   };
 
   componentDidMount() {
@@ -27,7 +28,7 @@ class MusicCard extends Component {
       // console.log(await ApiResponse);
       this.setState({
         loading: false,
-        favoriteMusicsData: [...ApiResponse],
+        favoriteMusicsData: ApiResponse,
       });
     });
   };
@@ -35,7 +36,7 @@ class MusicCard extends Component {
   render() {
     const { trackName, previewUrl, trackId, musica } = this.props;
     // console.log(musica);
-    const { loading, favoriteMusicsData } = this.state;
+    const { loading, favoriteMusicsData, favorites } = this.state;
     return (
       <div>
         <span>{trackName}</span>
