@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 class MusicCard extends Component {
   state = {
     favoriteMusicsData: [],
     loading: false,
-    // favorites: [],
   };
 
   componentDidMount() {
@@ -16,11 +15,21 @@ class MusicCard extends Component {
   }
 
   requestFavoriteApi = (object) => {
-    this.setState({ loading: true }, async () => {
-      await addSong(object);
-      await this.recoverFavoriteSongs();
-      this.setState({ loading: false });
-    });
+    const { favoriteMusicsData } = this.state;
+    const search = favoriteMusicsData.some((item) => item.trackId === object.trackId);
+    if (search) {
+      this.setState({ loading: true }, async () => {
+        await removeSong(object);
+        await this.recoverFavoriteSongs();
+        this.setState({ loading: false });
+      });
+    } else {
+      this.setState({ loading: true }, async () => {
+        await addSong(object);
+        await this.recoverFavoriteSongs();
+        this.setState({ loading: false });
+      });
+    }
   };
 
   recoverFavoriteSongs = async () => {
@@ -32,11 +41,10 @@ class MusicCard extends Component {
 
   render() {
     const { trackName, previewUrl, trackId, musica } = this.props;
-    // console.log(musica);
     const { loading, favoriteMusicsData } = this.state;
     return (
       <div>
-        <span>{trackName}</span>
+        <p>{trackName}</p>
         <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
@@ -55,7 +63,9 @@ class MusicCard extends Component {
               checked={
                 favoriteMusicsData.some((item) => item.trackId === trackId)
               }
-              onChange={ () => this.requestFavoriteApi(musica) }
+              onChange={ () => {
+                this.requestFavoriteApi(musica);
+              } }
             />
           </label>
         </div>
