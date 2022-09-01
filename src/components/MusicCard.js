@@ -18,18 +18,15 @@ class MusicCard extends Component {
   requestFavoriteApi = (object) => {
     this.setState({ loading: true }, async () => {
       await addSong(object);
+      await this.recoverFavoriteSongs();
       this.setState({ loading: false });
     });
   };
 
-  recoverFavoriteSongs = () => {
-    this.setState({ loading: true }, async () => {
-      const ApiResponse = await getFavoriteSongs();
-      // console.log(await ApiResponse);
-      this.setState({
-        loading: false,
-        favoriteMusicsData: ApiResponse,
-      });
+  recoverFavoriteSongs = async () => {
+    const ApiResponse = await getFavoriteSongs();
+    this.setState({
+      favoriteMusicsData: ApiResponse,
     });
   };
 
