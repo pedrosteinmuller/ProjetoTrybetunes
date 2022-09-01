@@ -69,6 +69,8 @@ class MusicCard extends Component {
 // trocar onClick do meu input do tipo checkbox para onChange e alteração de um detalhe
 // da minha função recoverFavoriteSongs com uso do spread.
 
+// o requisito 10 passou automaticamente ao resolver problema do requisito 8 e 9 que eu estava tendo, nao percebi.
+
 MusicCard.propTypes = {
   trackName: PropTypes.string.isRequired,
   previewUrl: PropTypes.string.isRequired,
