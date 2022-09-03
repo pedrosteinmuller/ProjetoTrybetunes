@@ -33,7 +33,7 @@ class Favorites extends Component {
   render() {
     const { favoritelist, loading } = this.state;
     return (
-      <div favoritelist-testid="page-favorites">
+      <div data-testid="page-favorites">
         <Header />
         {
           loading && (
