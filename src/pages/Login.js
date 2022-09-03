@@ -35,9 +35,12 @@ class Login extends Component {
           <Loading />
         )}
         <form>
-          <label htmlFor="login-name-input">
+          <img src="./logomusic.png" alt="logomusica" className="logo-music" />
+          <p className="title-login">Pedro Steinmüller - TrybeTunes</p>
+          <label htmlFor="login-name-input" className="name">
             Nome:
             <input
+              className="login-name-input"
               id="login-name-input"
               data-testid="login-name-input"
               type="text"
@@ -46,6 +49,7 @@ class Login extends Component {
             />
           </label>
           <button
+            className="button-login"
             type="button"
             data-testid="login-submit-button"
             disabled={ name.length < minlength }

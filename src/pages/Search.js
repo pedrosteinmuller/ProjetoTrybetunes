@@ -42,7 +42,6 @@ class Search extends Component {
           !loading && (
             <form>
               <label htmlFor="search-artist-input">
-                Nome:
                 <input
                   id="search-artist-input"
                   data-testid="search-artist-input"

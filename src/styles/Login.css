@@ -12,39 +12,61 @@ label {
   margin: 20px 30px;
 }
 
-input {
+.login-name-input {
   background-color: #2b0413;
   border: 2px solid #e25d52;
   border-radius: 15px;
   box-shadow: 0 0 25px #e25d52;
   color: white;
-  padding: 10px;
-  width: 200px;
-}
-
-input:focus {
-  outline: none;
-}
-
-form {
-  align-items: center;
-  background-color: rgb(77, 116, 214);
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
 }
+
+.page-login {
+  align-items: center;
+  background: #35e383;
+  background-color: rgb(33, 86, 219);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.title-login {
+  font-size: 30px;
+  text-align: center;
+}
+
+.button-login {
+  align-items: center;
+  background-color: #2b0413;
+  border: 2px solid #e25d52;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #e25d52;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.logo-music {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* float: right; */
+  width: 40%; }
 
 button {
-
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   background: #0066a2;
   border-color: #01080c;
   border-radius: 20px;
   color: white;
   font: 15px arial , sans-serif;
   height: 30px;
-  margin-bottom: 10px;
   margin-top: 15px;
   width: 100px;
 }
