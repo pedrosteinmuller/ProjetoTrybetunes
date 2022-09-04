@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import '../styles/album.css';
 
 class Album extends Component {
   state = {
@@ -23,10 +24,10 @@ class Album extends Component {
   render() {
     const { musicsList } = this.state;
     return (
-      <div data-testid="page-album">
+      <div data-testid="page-album" className="page-album">
         <Header />
         {musicsList.length > 0 && (
-          <div>
+          <div className="name-details">
             <h2 data-testid="artist-name">{musicsList[0].artistName}</h2>
             <h3
               data-testid="album-name"

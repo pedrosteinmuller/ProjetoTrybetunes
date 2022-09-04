@@ -1,0 +1,38 @@
+.header-component {
+  align-items: center;
+  background: linear-gradient(273deg, rgba(1, 1, 1) 47%, rgba(168, 72, 37, 0.779) 54%);
+  display: flex;
+  justify-content: space-around;
+  padding: 3px 15px;
+}
+
+.header-component a {
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+.header-component a:hover {
+  background-color: rgba(2, 1, 1, 0.233);
+  transition: all 1s;
+}
+
+.user-name {
+  align-items: center;
+  color: white;
+  display: flex;
+}
+
+.profile-container img {
+  border-radius: 50%;
+  height: 35px;
+}
+
+.profile-container {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+}

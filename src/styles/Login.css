@@ -1,16 +1,17 @@
 body {
   background: lightgray;
-  font-family: open sans , sans-serif;
+  font-family: monospace;
+  font-size: 15px;
 }
 
-/* label {
+.name {
   align-items: center;
   display: flex;
   flex-direction: column;
   font-weight: 1000;
   height: 30px;
   margin: 20px 30px;
-} */
+}
 
 .login-name-input {
   background-color: #2b0413;
@@ -21,13 +22,13 @@ body {
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  padding: 5px;
   width: 50%;
 }
 
 .page-login {
   align-items: center;
   background: #35e383;
-  background-color: rgb(33, 86, 219);
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -45,8 +46,10 @@ body {
   border: 2px solid #e25d52;
   border-radius: 15px;
   box-shadow: 0 0 25px #e25d52;
+  color: white;
   cursor: pointer;
   display: flex;
+  height: 30px;
   justify-content: center;
   margin: 0 auto;
   width: 50%;
@@ -59,14 +62,6 @@ body {
   width: 40%;
 }
 
-/*
-button {
-  background: #0066a2;
-  border-color: #01080c;
-  border-radius: 20px;
+.headerName {
   color: white;
-  font: 15px arial , sans-serif;
-  height: 30px;
-  margin-top: 15px;
-  width: 100px;
-} */
+}
