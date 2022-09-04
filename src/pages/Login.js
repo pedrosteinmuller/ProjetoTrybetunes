@@ -31,9 +31,6 @@ class Login extends Component {
     const minlength = 3;
     return (
       <div data-testid="page-login" className="page-login">
-        {loading && (
-          <Loading />
-        )}
         <form>
           <img src="./logomusic.png" alt="logomusica" className="logo-music" />
           <p className="title-login">Pedro Steinmüller - TrybeTunes</p>
@@ -48,6 +45,9 @@ class Login extends Component {
               onChange={ this.handleChange }
             />
           </label>
+          {loading && (
+            <Loading />
+          )}
           <button
             className="button-login"
             type="button"

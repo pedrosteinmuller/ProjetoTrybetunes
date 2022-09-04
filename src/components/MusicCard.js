@@ -51,9 +51,6 @@ class MusicCard extends Component {
           <code>audio</code>
         </audio>
         <div>
-          {
-            loading && <Loading />
-          }
           <label htmlFor={ `checkbox-music-${trackId}` }>
             Favorita
             <input
@@ -68,6 +65,9 @@ class MusicCard extends Component {
               } }
             />
           </label>
+          {
+            loading && <Loading />
+          }
         </div>
       </div>
 
