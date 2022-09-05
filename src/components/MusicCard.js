@@ -10,16 +10,19 @@ class MusicCard extends Component {
   };
 
   componentDidMount() {
-    this.requestFavoriteApi();
     this.recoverFavoriteSongs();
   }
 
   requestFavoriteApi = (object) => {
     const { favoriteMusicsData } = this.state;
+    const { handleChange } = this.props;
     const search = favoriteMusicsData.some((item) => item.trackId === object.trackId);
     if (search) {
       this.setState({ loading: true }, async () => {
         await removeSong(object);
+        if (handleChange) {
+          handleChange(object.trackId);
+        }
         await this.recoverFavoriteSongs();
         this.setState({ loading: false });
       });
@@ -43,20 +46,21 @@ class MusicCard extends Component {
     const { trackName, previewUrl, trackId, musica } = this.props;
     const { loading, favoriteMusicsData } = this.state;
     return (
-      <div>
+      <div className="music-card">
         <p>{trackName}</p>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
+        <audio data-testid="audio-component" src={ previewUrl } controls className="audi">
           <track kind="captions" />
           O seu navegador não suporta o elemento
           <code>audio</code>
         </audio>
         <div>
-          <label htmlFor={ `checkbox-music-${trackId}` }>
+          <label htmlFor={ `checkbox-music-${trackId}` } className="like">
             Favorita
             <input
               id={ `checkbox-music-${trackId}` }
               data-testid={ `checkbox-music-${trackId}` }
               type="checkbox"
+              className="check"
               checked={
                 favoriteMusicsData.some((item) => item.trackId === trackId)
               }
@@ -64,13 +68,13 @@ class MusicCard extends Component {
                 this.requestFavoriteApi(musica);
               } }
             />
+            <i />
           </label>
           {
             loading && <Loading />
           }
         </div>
       </div>
-
     );
   }
 }
@@ -88,4 +92,7 @@ MusicCard.propTypes = {
   musica: PropTypes.shape().isRequired,
 };
 
+MusicCard.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+};
 export default MusicCard;

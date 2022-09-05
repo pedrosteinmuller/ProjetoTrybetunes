@@ -38,13 +38,18 @@ class Album extends Component {
         )}
         {musicsList.length > 0 && (
           musicsList.filter((e) => e.trackName).map((eachMusic) => (
-            <MusicCard
-              key={ eachMusic.trackName }
-              trackName={ eachMusic.trackName }
-              previewUrl={ eachMusic.previewUrl }
-              trackId={ eachMusic.trackId }
-              musica={ eachMusic }
-            />
+            <div key={ eachMusic.trackName } className="cards-area">
+              <div className="card-audios">
+                <MusicCard
+                  key={ eachMusic.trackName }
+                  trackName={ eachMusic.trackName }
+                  previewUrl={ eachMusic.previewUrl }
+                  trackId={ eachMusic.trackId }
+                  musica={ eachMusic }
+                />
+              </div>
+            </div>
+
           ))
         )}
       </div>
