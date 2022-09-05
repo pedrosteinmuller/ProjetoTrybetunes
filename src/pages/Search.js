@@ -40,6 +40,9 @@ class Search extends Component {
       <div data-testid="page-search" className="page-search">
         <Header />
         {
+          loading && <Loading className="loading-search" />
+        }
+        {
           !loading && (
             <form className="form-search">
               <label htmlFor="search-artist-input">
@@ -65,9 +68,6 @@ class Search extends Component {
             </form>
           )
         }
-        {
-          loading && <Loading />
-        }
         <div>
           { artistResult.length > noWords ? (
             <div className="details">
@@ -91,7 +91,7 @@ class Search extends Component {
               }
             </div>
           ) : (
-            <h2>Nenhum álbum foi encontrado</h2>
+            <h2 className="notfound">Nenhum álbum foi encontrado</h2>
           )}
         </div>
       </div>

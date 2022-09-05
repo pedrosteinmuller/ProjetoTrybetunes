@@ -154,3 +154,10 @@ a:hover {
   color: rgb(215, 39, 39);
 
 }
+
+.notfound {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}

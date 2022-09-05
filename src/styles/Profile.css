@@ -1,0 +1,29 @@
+.perfil-page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.profile-name h3 {
+  font-weight: 600;
+}
+
+.profile-email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-description h3 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-image {
+  border-radius: 50%;
+  height: 200px;
+}

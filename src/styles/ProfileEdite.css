@@ -1,0 +1,24 @@
+.page-profile-edit {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: space-around;
+  margin-top: 200px;
+  position: absolute;
+}
+
+.edit-description label {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

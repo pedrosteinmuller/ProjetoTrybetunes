@@ -1,0 +1,12 @@
+.favorite-music {
+  margin: 0 auto;
+  margin-top: 40px;
+  position: relative;
+
+  /* width: 80%; */
+}
+
+.profile-image {
+  border-radius: 50%;
+  height: 200px;
+}

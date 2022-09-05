@@ -45,9 +45,6 @@ class Login extends Component {
               onChange={ this.handleChange }
             />
           </label>
-          {loading && (
-            <Loading />
-          )}
           <button
             className="button-login"
             type="button"
@@ -57,6 +54,9 @@ class Login extends Component {
           >
             Entrar
           </button>
+          {loading && (
+            <Loading />
+          )}
         </form>
       </div>
     );

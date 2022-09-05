@@ -37,6 +37,15 @@ class Header extends Component {
     const { userName, loading } = this.state;
     return (
       <header data-testid="header-component" className="header-component">
+        {loading
+          ? (
+            <Loading />
+          ) : (
+            <div className="profile-container">
+              <img src={ userIcon } alt="Foto de perfil" />
+              <p data-testid="header-user-name" className="user-name">{userName.name}</p>
+            </div>
+          )}
         <Link
           to="/search"
           data-testid="link-to-search"
@@ -58,15 +67,6 @@ class Header extends Component {
         >
           Perfil
         </Link>
-        {loading
-          ? (
-            <Loading />
-          ) : (
-            <div className="profile-container">
-              <img src={ userIcon } alt="Foto de perfil" />
-              <p data-testid="header-user-name" className="user-name">{userName.name}</p>
-            </div>
-          )}
       </header>
     );
   }
