@@ -93,6 +93,6 @@ MusicCard.propTypes = {
 };
 
 MusicCard.propTypes = {
-  handleChange: PropTypes.func.isRequired,
-};
+  handleChange: PropTypes.func,
+}.isRequired;
 export default MusicCard;

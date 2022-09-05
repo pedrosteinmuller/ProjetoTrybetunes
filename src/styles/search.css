@@ -74,7 +74,7 @@ input::placeholder {
   flex-direction: row;
   gap: 10px;
   justify-content: space-evenly;
-  
+
 }
 
 .result-name {
@@ -126,14 +126,14 @@ input::placeholder {
   font-weight: 1000;
   justify-content: space-around;
   text-align: center;
-  
+
 }
 
 .card-area p {
   bottom: 20px;
   color: black;
-  padding: 20px;
   font-weight: 800;
+  padding: 20px;
   position: relative;
   text-align: center;
 
@@ -147,7 +147,7 @@ input::placeholder {
   position: relative;
   text-align: center;
   text-decoration: none;
-  
+
 }
 
 a:hover {
