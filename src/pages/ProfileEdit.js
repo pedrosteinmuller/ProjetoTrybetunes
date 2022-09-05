@@ -25,9 +25,9 @@ class ProfileEdit extends Component {
   };
 
   handleSubmit = async () => {
-    const { name, email, description, changeImage } = this.state;
+    const { name, email, description, image } = this.state;
     this.setState({ loading: true });
-    await updateUser({ name, email, description, image: changeImage });
+    await updateUser({ name, email, description, image });
     this.setState({ loading: false });
   };
 
@@ -58,18 +58,17 @@ class ProfileEdit extends Component {
         <h1>Editar perfil</h1>
         <img
           className="profile-image"
-          data-testid="profile-image"
           src={ changeImage }
-          alt="Foto de perfil"
+          alt="Foto perfil"
         />
         {loading ? (
           <Loading />
         ) : (
           <form>
-            <label htmlFor="edit-input-name">
+            <label htmlFor="namee">
               Nome:
               <input
-                id="edit-input-name"
+                id="namee"
                 data-testid="edit-input-name"
                 name="name"
                 type="text"
@@ -78,10 +77,10 @@ class ProfileEdit extends Component {
                 required
               />
             </label>
-            <label htmlFor="edit-input-email">
+            <label htmlFor="email">
               Email:
               <input
-                id="edit-input-email"
+                id="email"
                 data-testid="edit-input-email"
                 type="email"
                 name="email"
@@ -90,10 +89,10 @@ class ProfileEdit extends Component {
                 required
               />
             </label>
-            <label htmlFor="edit-input-description" className="edit-input-description">
+            <label htmlFor="description" className="edit-input-description">
               Descrição:
               <textarea
-                id="edit-input-description"
+                id="description"
                 data-testid="edit-input-description"
                 name="description"
                 value={ description }
@@ -101,10 +100,10 @@ class ProfileEdit extends Component {
                 required
               />
             </label>
-            <label htmlFor="edit-input-image">
+            <label htmlFor="image">
               Foto de Perfil:
               <input
-                id="edit-input-image"
+                id="image"
                 data-testid="edit-input-image"
                 type="text"
                 placeholder="Link da imagem"
